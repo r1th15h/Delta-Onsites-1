@@ -1,6 +1,5 @@
 import express from 'express'
 import http from 'http'
-import cookieParser from 'cookie-parser'
 import mongoose from 'mongoose';
 import Drive from './Models/drive.js'
 import upload from './multermiddle.js';
@@ -15,7 +14,6 @@ const server = http.createServer(app);
 
 app.use(cor);
 app.use(express.json());
-app.use(cookieParser());
 app.use(express.urlencoded({extended:true}));
 
 mongoose.connect(DB_URI)
@@ -28,7 +26,7 @@ app.post('/upload/file',upload.single("fileupl"),async (req,res)=>{
     try{
         if(req.file){
             const {parentid} = req.body;
-             const pid = parentid === "null" ? null : parentid;
+            const pid = parentid === "null" ? null : parentid;
             const newFile = await Drive.create({
             name: req.file.originalname,
             type: "file",
