@@ -13,7 +13,6 @@ export const Dashboard = () => {
         const datafunc = async()=>{
             const getdata = await axi.get(`/getdata/${parentid}`);
             setdata(getdata.data);
-            console.log(getdata.data);
         }
         datafunc(); 
     },[parentid])
@@ -34,7 +33,6 @@ export const Dashboard = () => {
     async function createfolder(){
         try{
             const res = await axi.post('/upload/folder',{name:folder,type:"folder",parentid:parentid});
-            console.log("hello");
             setfolder("");
             window.location.reload()
         }

@@ -57,7 +57,6 @@ app.get('/getdata/:parentid',async (req,res)=>{
     try{
         const {parentid} = req.params;
         const pid = parentid === "null" ? null : parentid;
-        console.log(parentid);
         const data = await Drive.find({parentid:pid});
         if(data){
             res.send(data);

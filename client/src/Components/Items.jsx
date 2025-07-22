@@ -14,7 +14,6 @@ export const Items = () => {
         const datafunc = async()=>{
             const getdata = await axi.get(`/getdata/${id}`);
             setdata(getdata.data);
-            console.log(getdata.data);
         }
         datafunc(); 
     },[id])
