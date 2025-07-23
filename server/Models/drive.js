@@ -1,21 +1,18 @@
 import mongoose from "mongoose";
 
 const driveschema = new mongoose.Schema({
-  name: {
-    type: String,
-    required: true,
+  name:{
+    type:String,
+    required:true,
   },
-  type: {
-    type: String, 
-    required: true,
+  type:{
+    type:String, 
+    required:true,
   },
-  parentid: {
-    type: mongoose.Schema.Types.ObjectId,
-    default: null, 
+  parentid:{
+    type:mongoose.Schema.Types.ObjectId,
+    default:null, 
   },
-  filepath: {
-    type: String,
-  }
-}, { timestamps: true });
+},{timestamps:true});
 
 export default mongoose.model("Drive", driveschema);
