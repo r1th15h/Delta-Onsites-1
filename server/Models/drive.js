@@ -13,6 +13,9 @@ const driveschema = new mongoose.Schema({
     type:mongoose.Schema.Types.ObjectId,
     default:null, 
   },
+  filePath:{
+    type: String,
+  }
 },{timestamps:true});
 
 export default mongoose.model("Drive", driveschema);
